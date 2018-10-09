@@ -67,7 +67,7 @@ namespace BurningRopes.Utility
 
 
             var lines = new List<string>();
-            lines.Add($"{time} minutes");
+            lines.Add($"{time} minutes - {ropeInstructions.Count} {(ropeInstructions.Count == 1 ? "rope" : "ropes")}");
 
             foreach (var timeInstruction in timeInstructions)
             {
@@ -80,6 +80,15 @@ namespace BurningRopes.Utility
             }
 
             return lines;
+        }
+
+        public static string GetSummary(SortedList<double, List<RopeInstruction>> allKnownTimesWithInstructions, int numRopes, double ropeBurnTime)
+        {
+            return String.Join(Environment.NewLine,
+                $"Number of ropes: {numRopes}, Rope burn time: {ropeBurnTime}",
+                $"Number of possible times: {allKnownTimesWithInstructions.Count}",
+                $"Possible times:",
+                String.Join(", ", allKnownTimesWithInstructions.Keys));
         }
     }
 }

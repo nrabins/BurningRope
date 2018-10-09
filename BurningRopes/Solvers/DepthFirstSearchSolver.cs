@@ -14,7 +14,6 @@ namespace BurningRopes.Solvers
         {
         }
 
-
         public override SortedList<double, List<RopeInstruction>> Solve()
         {
             var allKnownTimesWithInstructions = new SortedList<double, List<RopeInstruction>>

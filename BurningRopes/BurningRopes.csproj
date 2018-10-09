@@ -45,7 +45,8 @@
     <Compile Include="Models\RopeAction.cs" />
     <Compile Include="Models\RopeInstruction.cs" />
     <Compile Include="Models\TimeInstruction.cs" />
-    <Compile Include="Solvers\DFSSolver.cs" />
+    <Compile Include="Solvers\BreadthFirstSearchSolver.cs" />
+    <Compile Include="Solvers\DepthFirstSearchSolver.cs" />
     <Compile Include="Solvers\RopeSolver.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
