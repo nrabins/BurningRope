@@ -14,13 +14,20 @@ namespace BurningRopes
     class Program
     {
         private static readonly double ROPE_BURN_TIME = 60;
-        private static readonly int NUM_ROPES = 3;
+        private static readonly int NUM_ROPES = 2;
 
         public static void Main(string[] args)
         {
 
-            var solver = new DepthFirstSearchSolver(NUM_ROPES, ROPE_BURN_TIME);
+            //var solver = new DepthFirstSearchSolver(NUM_ROPES, ROPE_BURN_TIME);
+            var solver = new BreadthFirstSearchSolver(NUM_ROPES, ROPE_BURN_TIME);
             var allKnownTimesWithInstructions = solver.Solve();
+
+            var summary = FormatUtilities.GetSummary(allKnownTimesWithInstructions, NUM_ROPES, ROPE_BURN_TIME);
+            Console.WriteLine(summary);
+
+            Console.WriteLine(Environment.NewLine + "Press any key for detailed instructions...");
+            Console.ReadKey();
             
             foreach (var knownTime in allKnownTimesWithInstructions)
             {
@@ -32,6 +39,7 @@ namespace BurningRopes
 
                 Console.WriteLine();
             }
+            Console.WriteLine(Environment.NewLine + "Press any key to end...");
             Console.ReadKey();
         }
     }
